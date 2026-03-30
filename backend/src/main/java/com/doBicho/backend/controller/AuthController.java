@@ -21,7 +21,6 @@ public class AuthController {
         return ResponseEntity.ok(novoUsuario);
     }
 
-    // --- ADICIONE ESTE MÉTODO ABAIXO ---
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         try {
