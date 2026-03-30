@@ -19,9 +19,9 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-
+    
     - name: Build with Maven
       working-directory: ./backend
       run: |
         chmod +x mvnw
-        ./mvnw -B package --file pom.xml
+        ./mvnw -B package
