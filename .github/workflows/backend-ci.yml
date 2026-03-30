@@ -1,15 +1,14 @@
-name: Java CI with Maven
+name: Backend CI (Java)
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
+    paths:
+      - 'backend/**' 
     branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
 
@@ -18,9 +17,8 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
-        cache: maven
-    
-    - name: Build with Maven
+
+    - name: Build and Test
       working-directory: ./backend
       run: |
         chmod +x mvnw
